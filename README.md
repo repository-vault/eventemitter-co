@@ -1,6 +1,35 @@
-eventemitter  with generator support
+eventemitter with generator support (through co). [eventemitter-co](https://github.com/131/eventemitter-co) mimics `require('events').EventEmitter` API.
+
+# API
+```
+var sleep = require('nyks/function/sleep');
+
+var Event = require('eventemitter-co');
+var event = new Event();
+
+var cafe = {color:'black'};
+event.on("start", function*() {
+  yield sleep(1);
+  console.log("Hi, coffee is ", this.color);
+}, cafe);
+
+
+event.emit("start");
+```
+
+# Notes
+You can set an optional 3rd parameter and set the context ("this") in event registration.
+
+# See also
+
+* [uclass](https://github.com/131/uclass) a pure JS/browser compliant class design syntax (ES6 classes with bindings)
+
 
 # Credits
+* [131](https://github.com/131);
+
+# Keywords / shout box
+events, eventemitter2, uclass, co, generators, promise, binding
 
 
 [![Build Status](https://travis-ci.org/131/eventemitter-co.svg?branch=master)](https://travis-ci.org/131/eventemitter-co)
