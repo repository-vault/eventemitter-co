@@ -21,16 +21,23 @@ const EventEmitter = new Class({
     this.fireEvent = this.emit;
   },
 
+  
+
   emit:function(event, payload){
     if(!this.callbacks[event])
       return;
 
     var args = Array.prototype.slice.call(arguments, 1);
 
+    var chain = [];
     forIn(this.callbacks[event], function(callback) {
-      co.apply(callback.ctx, [callback.callback].concat(args));
+      var p = co.apply(callback.ctx, [callback.callback].concat(args));
+      chain.push(p);
     });
+
+    return Promise.all(chain);
   },
+
 
 
   on:function(event, callback, ctx){

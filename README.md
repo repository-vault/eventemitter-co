@@ -17,6 +17,11 @@ event.on("start", function*() {
 event.emit("start");
 ```
 
+# Errors (&promises)
+event.emit() will return a promise you can work with if you need [to handle errors](https://github.com/131/eventemitter-co/blob/master/test/errors.js)
+
+
+
 # Notes
 You can set an optional 3rd parameter and set the context ("this") in event registration.
 
