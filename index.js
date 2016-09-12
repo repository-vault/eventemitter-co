@@ -13,7 +13,9 @@ const EventEmitter = new Class({
 
   initialize : function() {
     var self = this;
+
     this.addEvent = this.on;
+    this.addListener = this.on;
     this.removeListener = this.off;
     this.removeAllListeners = this.off;
     this.fireEvent = this.emit;
