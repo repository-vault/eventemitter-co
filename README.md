@@ -1,4 +1,4 @@
-eventemitter with generator support (through co). [eventemitter-co](https://github.com/131/eventemitter-co) mimics `require('events').EventEmitter` API.
+eventemitter with generator support (through [co](https://github.com/tj/co)). [eventemitter-co](https://github.com/131/eventemitter-co) mimics `require('events').EventEmitter` API.
 
 # API
 ```
