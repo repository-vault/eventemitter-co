@@ -7,23 +7,16 @@ const co    = require('co');
 
 
 const EventEmitter = new Class({
-  Binds : ['on', 'off', 'once', 'emit'],
+  Binds : [
+    'on', 'off', 'once', 'emit', 
+    'addEvent', 'addListener', 'removeListener', 'removeAllListeners', 'fireEvent',
+  ],
 
   callbacks : {},
 
-  initialize : function() {
-    var self = this;
-
-    this.addEvent = this.on;
-    this.addListener = this.on;
-    this.removeListener = this.off;
-    this.removeAllListeners = this.off;
-    this.fireEvent = this.emit;
-  },
-
-  
-
-  emit:function(event, payload){
+  emit : function(event, payload)/**
+  * @interactive_runner hide
+  */ {
     if(!this.callbacks[event])
       return Promise.resolve();
 
@@ -41,7 +34,9 @@ const EventEmitter = new Class({
 
 
 
-  on:function(event, callback, ctx){
+  on : function(event, callback, ctx) /**
+  * @interactive_runner hide
+  */ {
     if(typeof callback != "function")
       return console.log("you try to register a non function in " , event)
     if(!this.callbacks[event])
@@ -49,7 +44,9 @@ const EventEmitter = new Class({
     this.callbacks[event][guid()] = {callback, ctx};
   },
 
-  once:function(event, callback, ctx){
+  once : function(event, callback, ctx) /**
+  * @interactive_runner hide
+  */ {
     var self = this;
     var once = function(){
       self.off(event, once);
@@ -60,7 +57,9 @@ const EventEmitter = new Class({
     this.on(event, once);
   },
 
-  off:function(event, callback){
+  off : function(event, callback) /**
+  * @interactive_runner hide
+  */ {
     if(!event)
       this.callbacks = {};
     else if(!callback)
@@ -71,5 +70,11 @@ const EventEmitter = new Class({
     }, this);
   },
 });
+
+EventEmitter.prototype.addEvent           = EventEmitter.prototype.on;
+EventEmitter.prototype.addListener        = EventEmitter.prototype.on;
+EventEmitter.prototype.removeListener     = EventEmitter.prototype.off;
+EventEmitter.prototype.removeAllListeners = EventEmitter.prototype.off;
+EventEmitter.prototype.fireEvent          = EventEmitter.prototype.emit;
 
 module.exports = EventEmitter;
