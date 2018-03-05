@@ -2,4 +2,5 @@ language: node_js
 node_js:
   - 4
 after_script:
+  - npm run eslint
   - npm run coveralls

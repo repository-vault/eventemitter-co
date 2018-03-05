@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "node node_modules/istanbul/lib/cli.js  cover --report text-summary --report html --report lcov  node_modules/mocha/bin/_mocha",
-    "coveralls": "npm install coveralls && node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info"
+    "coveralls": "npm install coveralls && node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info",
+    "eslint": "eslint index.js test"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "uclass": "^2.4.0"
   },
   "devDependencies": {
+    "eslint-plugin-ivs": "^1.0.5",
     "expect.js": "^0.3.1",
     "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
