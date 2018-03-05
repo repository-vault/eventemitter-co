@@ -18,7 +18,6 @@
   "keywords": [
     "co",
     "event",
-    "uclass",
     "eventemitter"
   ],
   "author": "Francois Leurent <131.js@cloudyks.org>",
@@ -29,8 +28,7 @@
   "homepage": "https://github.com/131/eventemitter-co",
   "dependencies": {
     "co": "^4.6.0",
-    "mout": "^1.0.0",
-    "uclass": "^2.4.0"
+    "mout": "^1.0.0"
   },
   "devDependencies": {
     "eslint-plugin-ivs": "^1.0.5",

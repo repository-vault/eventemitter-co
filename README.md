@@ -40,6 +40,6 @@ You can set an optional 3rd parameter and set the context ("this") in event regi
 
 
 # Keywords / shout box
-events, eventemitter2, uclass, co, generators, promise, binding
+events, eventemitter2, co, generators, promise, binding
 
 
