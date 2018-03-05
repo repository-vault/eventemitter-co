@@ -4,3 +4,9 @@ node_js:
 after_script:
   - npm run eslint
   - npm run coveralls
+deploy:
+  provider: npm
+  email: "131.frodon@cloudyks.org"
+  api_key: $NPM_TOKEN 
+  on:
+    tags: true
