@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/131/eventemitter-co",
   "dependencies": {
+    "bindthem": "^1.0.2",
     "co": "^4.6.0",
     "mout": "^1.0.0"
   },
