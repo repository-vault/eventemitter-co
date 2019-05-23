@@ -1,6 +1,6 @@
 {
   "name": "eventemitter-co",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "EventEmitter with generator support",
   "main": "index.js",
   "directories": {
