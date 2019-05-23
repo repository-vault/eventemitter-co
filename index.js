@@ -60,11 +60,11 @@ class EventEmitter {
   off(event, callback) /**
   * @interactive_runner hide
   */ {
-    if(!event)
+    if(!event) {
       this.callbacks = {};
-    else if(!callback)
+    } else if(!callback) {
       this.callbacks[event] = {};
-    else {
+    } else {
       forIn(this.callbacks[event] || {}, function(v, k) {
         if(v.callback == callback)
           delete this.callbacks[event][k];
